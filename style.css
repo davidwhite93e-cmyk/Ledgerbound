@@ -1,0 +1,148 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #1c1a16;
+  color: #f4ecd8;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 420px;
+  min-height: 100vh;
+  background: #2b2620;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+h1, h2, h3 { margin: 0 0 8px 0; }
+.subtitle { color: #c9b98f; margin: 0 0 16px 0; font-size: 14px; }
+.hint { color: #c9b98f; font-size: 12px; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  min-height: 44px;
+  padding: 0 14px;
+  font-size: 15px;
+}
+
+.primary-btn {
+  background: #c98a3a;
+  color: #201c16;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 12px;
+}
+.primary-btn:disabled { background: #6b5b3f; color: #a89878; cursor: not-allowed; }
+
+.secondary-btn {
+  background: #4a4438;
+  color: #f4ecd8;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.stepper-btn {
+  background: #4a4438;
+  color: #f4ecd8;
+  min-width: 40px;
+  min-height: 40px;
+  font-size: 18px;
+}
+
+.status-bar {
+  background: #201c16;
+  border: 1px solid #4a4438;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+.status-row { display: flex; justify-content: space-between; padding: 2px 0; }
+.status-city { font-weight: 700; font-size: 15px; }
+.faction-row { color: #c9b98f; font-size: 11px; }
+
+.name-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #4a4438;
+  background: #201c16;
+  color: #f4ecd8;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.stat-rows { display: flex; flex-direction: column; gap: 10px; margin-bottom: 8px; }
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #201c16;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.stat-label { font-weight: 600; }
+.stat-hint { font-size: 11px; color: #c9b98f; }
+.stat-controls { display: flex; align-items: center; gap: 8px; }
+.stat-value { min-width: 20px; text-align: center; font-weight: 700; }
+.remaining { color: #e0a940; font-weight: 600; }
+
+.map-canvas-holder { display: flex; justify-content: center; margin-bottom: 10px; }
+.map-canvas { background: #201c16; border-radius: 10px; border: 1px solid #4a4438; max-width: 100%; touch-action: manipulation; }
+
+.travel-panel { min-height: 10px; }
+.travel-confirm { background: #201c16; border-radius: 10px; padding: 12px; margin-top: 8px; }
+.cost-line { color: #e0a940; font-weight: 600; }
+.info-note { color: #c9b98f; font-size: 13px; }
+.button-row { display: flex; gap: 8px; }
+.button-row > button { flex: 1; margin-top: 8px; }
+
+.tab-bar { display: flex; gap: 6px; margin-bottom: 10px; }
+.tab-btn {
+  flex: 1;
+  background: #201c16;
+  color: #c9b98f;
+  border: 1px solid #4a4438;
+}
+.tab-btn.active { background: #c98a3a; color: #201c16; font-weight: 700; }
+
+.market-table { display: flex; flex-direction: column; gap: 6px; }
+.market-header, .market-row {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr 0.6fr 1fr 1fr;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+}
+.market-header { color: #c9b98f; padding: 0 4px; }
+.market-row { background: #201c16; border-radius: 8px; padding: 8px 4px; }
+.market-row.contraband { border: 1px solid #a8452f; }
+.good-name { font-weight: 600; }
+.qty-controls { display: flex; align-items: center; gap: 4px; }
+.qty-controls .stepper-btn { min-width: 26px; min-height: 26px; font-size: 14px; padding: 0; }
+.qty-value { min-width: 16px; text-align: center; }
+.trade-buttons { display: flex; gap: 4px; }
+.buy-btn, .sell-btn { min-height: 30px; padding: 0 8px; font-size: 12px; }
+.buy-btn { background: #6f8f5a; color: #14180f; }
+.sell-btn { background: #a8452f; color: #f4ecd8; }
+
+.guild-hall { display: flex; flex-direction: column; gap: 12px; }
+.faction-card { background: #201c16; border-radius: 10px; padding: 12px; }
+.faction-tagline { color: #c9b98f; font-size: 12px; font-style: italic; }
+.standing-bar-track { background: #14120e; border-radius: 6px; height: 10px; overflow: hidden; margin: 8px 0; }
+.standing-bar-fill { background: #e0a940; height: 100%; }
+.faction-rank { font-size: 13px; margin-bottom: 6px; }
+
+.progress-track { background: #201c16; border-radius: 8px; height: 16px; overflow: hidden; margin-bottom: 12px; }
+.progress-fill { background: #c98a3a; height: 100%; width: 0%; }
+.encounter-desc { line-height: 1.5; }
+.encounter-result { margin-top: 10px; }
+
+.screen-win { text-align: center; }
