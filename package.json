@@ -1,0 +1,12 @@
+{
+  "name": "ledgerbound-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Zero-dependency TypeScript prototype for Ledgerbound, built when the sandbox couldn't reach the npm registry to install Vite/Phaser. See README.md for how to migrate to the intended Vite + Phaser 3 + Capacitor stack.",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "serve": "python3 -m http.server 8123"
+  }
+}
